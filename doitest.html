@@ -27,7 +27,7 @@
 			if (DOItest(DOIval) == true){
 				DOI = DOIval.match(doiRegExp)[0];
 				DOIurl = 'http://api.crossref.org/works/' + DOI;
-				$('#doiResponse').append(DOIurl + '<br />');
+				$('#doiResponse').append('Loading and testing ' + DOIurl + '<br />');
 				/* need error handling for cases with no CrossRef DOI record found, i.e. http://api.crossref.org/works/10.1016/j.iree.2016.07.002 */
 				$.getJSON( DOIurl, function( data ) {
 					var OpenURLbase = 'http://resolver.ebscohost.com.pluma.sjfc.edu/openurl';					

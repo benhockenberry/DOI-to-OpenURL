@@ -8,6 +8,13 @@ Project Initiated: 8/5/2016
  * HTML file to INCLUDE in an ILLiad Article Request to show a button to display a DOI search box, which, on-click, calls the javascript function, inserting the values into form fields on the ILLiad Request Page
  * HTML code snippet to insert into a non-ILLiad page which displays the resulting metadata, shows "Is this the right article?" and displays an OpenURL link (unless there's no resulting metadata)
 
+ ## To Be Done: DOItest.html
+ * Date processing:
+	published-print.date-parts[0] PRIORITIZE over published-online.date-parts[0] and created date
+ * ILLiad fields
+ * User input
+ * then... embed it in ILLiad!
+ 
 ## Sample DOI response: http://api.crossref.org/works/10.1080/15367967.2016.1154466
 {
     "status":"ok",
