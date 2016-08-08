@@ -9,8 +9,7 @@ Project Initiated: 8/5/2016
  * HTML code snippet to insert into a non-ILLiad page which displays the resulting metadata, shows "Is this the right article?" and displays an OpenURL link (unless there's no resulting metadata)
 
  ## To Be Done: DOItest.html
- * Date processing:
-	published-print.date-parts[0] PRIORITIZE over published-online.date-parts[0] and created date
+ * DONE Date processing: published-print.date-parts[0] PRIORITIZE over published-online.date-parts[0] and created date
  * ILLiad fields
  * User input
  * then... embed it in ILLiad!
