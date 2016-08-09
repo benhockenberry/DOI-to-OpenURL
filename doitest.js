@@ -24,6 +24,9 @@ $(document).ready(function() {
 			$('#doiResponse').append('Loading and testing ' + DOIurl + '<br />');
 			/* need error handling for cases with no CrossRef DOI record found, i.e. http://api.crossref.org/works/10.1016/j.iree.2016.07.002 */
 			$.getJSON( DOIurl, function( data ) {
+				alert("success");
+			})
+			.success(function() {
 				/* Define Local OpenURL variable */
 				var strAuthor = '';
 				var strJournal = '';
@@ -175,10 +178,12 @@ $(document).ready(function() {
 					$('#ISSN').val(strISSN);
 					$('#PhotoJournalYear').val(strDate);
 				}
-				
+			})
+			.error(function(event,jqxhr, exception){
+				$('#doiResponse').append('That DOI was not found. <!-- code: ' + event.status + ' jqxhr: ' + jqxhr + ' exception: ' + exception + '-->');
 			});
 		} else {
-			$('#doiResponse').val('No DOI found; no response called.');
+			$('#doiResponse').append('No DOI found; no response called.');
 		}
 	});
 });
