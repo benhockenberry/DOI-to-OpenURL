@@ -1,4 +1,5 @@
 /*This is doitest.js */
+
 /* == Define global variables == */
 
 /* doiRegExp is a regular expression to determine if a string is a valid DOI (Digital Object Identifier) */
@@ -26,7 +27,7 @@ function DOItest(DOItoTest) {
 	}
 }
 
-/* == Call the functions when the document is ready == */
+/* == Get things done once the document is ready == */
 $(document).ready(function() {
 	if (isILLiad == true) {
 		$('#doiSearchBox').hide();

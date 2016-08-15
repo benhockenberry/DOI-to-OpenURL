@@ -27,6 +27,7 @@ function DOItest(DOItoTest) {
 }
 
 /* == Call the functions when the document is ready == */
+
 $(document).ready(function() {
 	if (isILLiad == true) {
 		$('#doiSearchBox').hide();
