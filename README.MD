@@ -24,7 +24,8 @@ Project Initiated: 8/5/2016
  * jQuery UI CSS customized to campus colors
  
 ## Examples
- * Outside ILLiad: http://libguides.sjfc.edu/doi  - OpenURL lookup via DOI
+ * Outside ILLiad: http://libguides.sjfc.edu/doi - OpenURL lookup via DOI
+	* Another version, with the plain code as present in this repository: http://citadel.sjfc.edu/staff/bhockenberry/doitest/doitest.html
  * In ILLiad: Demonstration video: https://youtu.be/Ckrz_R_ZMG4
 	
 ## Goals
