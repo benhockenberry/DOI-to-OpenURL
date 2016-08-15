@@ -5,24 +5,44 @@ Project Initiated: 8/5/2016
 ## Contents: Files
  * README.md - You're looking at it
  * doitest.js - Javascript file to include in an ILLiad webpage
+	Adds a button which pops out a DOI search. If a DOI is found in the search string, it is checked against CrossRef, and if a target is identified by the DOI, its metadata is sent to the ILLiad request form.
  * doitest-nonilliad.js - Same thing, with "isILLiad" set to false, for use as an external DOI-to-OpenURL lookup
- * 
+ * include_doisearch.html - file that can be saved into your ILLiad request directory and included in your ArticleRequest form with the line:
+ ```html
+ <#INCLUDE filename="include_doisearch.html">
+ ``` 
+ * doitest.html - basic HTML page with the code to run a DOI lookup.  Modify this for wherever you want to host your lookup. Ours is in Libguides: http://libguides.sjfc.edu/doi
+ 
 
+## Dependencies
+### OpenURL Only
+ * jQuery
+ * CrossRef API
+ * Optional: Bootstrap CSS for button and input field highlighting
+### Our ILLiad Integration
+ * jQuery UI - currently used for dialog popups inside ILLiad; you could take these out if preferring not to import the whole JQUI library
+ * jQuery UI CSS customized to campus colors
+ 
+## Examples
+ * Outside ILLiad: http://libguides.sjfc.edu/doi  - OpenURL lookup via DOI
+ * In ILLiad: Demonstration video: https://youtu.be/Ckrz_R_ZMG4
+	
 ## Goals
  * Javascript file with a function that asynchronously queries CrossRef API with a DOI and return the elements needed for an OpenURL search
 	* DONE
  * HTML file to INCLUDE in an ILLiad Article Request to show a button to display a DOI search box, which, on-click, calls the javascript function, inserting the values into form fields on the ILLiad Request Page
     * DONE
  * HTML code snippet to insert into a non-ILLiad page which displays the resulting metadata, shows "Is this the right article?" and displays an OpenURL link (unless there's no resulting metadata)
-    * DONE
+    * This could be made simpler -- now it's a whole page sample, rather than a snippet
 
 ## Potential enhancements:
  * If no ISSN, but there is an ISBN, do what? Handle books better
  * Separate out functions that rely on jQuery UI, such as the popup in ILLiad, so interface design components are separate from functional requirements
  * On the ILLiad side, implement a more responsive version of the ".dialog" popup -- it works, currently, but something like FluidDialog would be better
-  
+ * Strip down Bootstrap CSS (which our ILLiad uses already) so others have access to the CSS for essential tags in the sample interface
  
 ## Sample DOI response: http://api.crossref.org/works/10.1080/15367967.2016.1154466
+```json
 {
     "status":"ok",
     "message-type":"work",
@@ -90,5 +110,5 @@ Project Initiated: 8/5/2016
         ]
     }
 }
-
+```
 
