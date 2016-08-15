@@ -2,15 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Test Asynchronous Call to CrossRef API</title>
+	<title>OpenURL Request derived from CrossRef API</title>
+	<link rel="stylesheet" type="text/css" href="doitest.css">
 </head>
 <body>
-	<div id="doiSearchBox" style="margin-top:1em;">
+	<div id="doiSearchBox">
 		<h2>Have a DOI?</h2>
-		<input type="text" id="inputDOI" value="doi:10.1016/j.jspi.2016.06.003" /> <a class="btn btn-default" id="checkDOI">Check DOI</a>
+		<input type="text" id="inputDOI" placeholder="Ex.: 10.1016/j.jspi.2016.06.003" /> <a class="btn btn-default" id="checkDOI">Check DOI</a>
 		<div id="doiResponse"></div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<!--
+		Add in jQuery UI if you want dialog lightboxes
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+		-->
 		<script src="doitest-nonilliad.js"></script>
 	</div>
 </body>
