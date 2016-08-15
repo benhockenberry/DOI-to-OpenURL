@@ -2,20 +2,25 @@
 Author: Ben Hockenberry
 Project Initiated: 8/5/2016
 
+## Contents: Files
+ * README.md - You're looking at it
+ * doitest.js - Javascript file to include in an ILLiad webpage
+ * doitest-nonilliad.js - Same thing, with "isILLiad" set to false, for use as an external DOI-to-OpenURL lookup
+ * 
+
 ## Goals
- * First, test asynchronous call to CrossRef API
-	* DONE
- * Javascript file with a function that asynchronously queries CrossRef API with a DOI and return the elements needed for a DOI search
+ * Javascript file with a function that asynchronously queries CrossRef API with a DOI and return the elements needed for an OpenURL search
 	* DONE
  * HTML file to INCLUDE in an ILLiad Article Request to show a button to display a DOI search box, which, on-click, calls the javascript function, inserting the values into form fields on the ILLiad Request Page
+    * DONE
  * HTML code snippet to insert into a non-ILLiad page which displays the resulting metadata, shows "Is this the right article?" and displays an OpenURL link (unless there's no resulting metadata)
+    * DONE
 
-## To Be Done: ILLiad Functionality
- * If no ISSN, but there is an ISBN, DO WHAT?
- * Create Button to show DOI Search
- * Create overlay screen for DOI search and results
- * Create link to Get It @ Fisher and ILLiad Request
-
+## Potential enhancements:
+ * If no ISSN, but there is an ISBN, do what? Handle books better
+ * Separate out functions that rely on jQuery UI, such as the popup in ILLiad, so interface design components are separate from functional requirements
+ * On the ILLiad side, implement a more responsive version of the ".dialog" popup -- it works, currently, but something like FluidDialog would be better
+  
  
 ## Sample DOI response: http://api.crossref.org/works/10.1080/15367967.2016.1154466
 {

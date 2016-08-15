@@ -5,7 +5,7 @@
 var doiRegExp = new RegExp('(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![%"#? ])\\S)+)');
 
 /* Change this value if you are using this script in an ILLiad ArticleRequest Form or not -- set to true or false */
-var isILLiad = true;
+var isILLiad = false;
 
 /* OpenURLbase is the URL for your institution's OpenURL resolver, stopping just before the "?" before the OpenURL fields */
 var OpenURLbase = 'http://resolver.ebscohost.com.pluma.sjfc.edu/openurl';
