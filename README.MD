@@ -15,10 +15,12 @@ Project Initiated: 8/5/2016
  
 
 ## Dependencies
+
 ### OpenURL Only
  * jQuery
  * CrossRef API
  * Optional: Bootstrap CSS for button and input field highlighting
+ 
 ### Our ILLiad Integration
  * jQuery UI - currently used for dialog popups inside ILLiad; you could take these out if preferring not to import the whole JQUI library
  * jQuery UI CSS customized to campus colors
