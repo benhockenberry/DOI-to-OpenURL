@@ -9,7 +9,12 @@ var doiRegExp = new RegExp('(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![%"#? ])\\S)+)')
 var isILLiad = true;
 
 /* OpenURLbase is the URL for your institution's OpenURL resolver, stopping just before the "?" before the OpenURL fields */
-var OpenURLbase = 'http://resolver.ebscohost.com.pluma.sjfc.edu/openurl';
+var OpenURLbase = 'http://resolver.ebscohost.com/openurl';
+
+/* OpenURLsuffix is only required if your resolver requires institutional authentication in a GET variable (EBSCO), as opposed to having the code in the host name (like 360Link). 
+
+Change this value to '' if you're in the latter category. */
+var OpenURLsuffix = '&site=ftf-live&authtype=guest&custid=s9000206&groupid=main';
 
 /* OpenURLbase is the label displayed for OpenURL links */
 var OpenURLbranding = 'Get It @ Fisher';					
@@ -183,7 +188,7 @@ $(document).ready(function() {
 				
 				if (!(isILLiad == true)) {
 					/* Since this isn't for ILLiad, Generate Output to the screen and create an OpenURL link */
-					var OpenURLLink = OpenURLbase + '?sid=' + encodeURIComponent(strCitedIn) + '&genre=' + encodeURIComponent(strType) + '&issn=' + strISSN + '&ISBN=' + strISBN + '&volume=' + strVolume + '&issue=' + strVolume + '&date=' + encodeURIComponent(strDate) + '&spage=' + strPage + '&pages=' + strPage + '&title=' + encodeURIComponent(strJournal) + '&atitle=' + encodeURIComponent(strTitle) + '&aulast=' + encodeURIComponent(strAuthor) + '&id=doi%3A%2F%2F' + encodeURIComponent(DOI) + '&site=ftf-live';
+					var OpenURLLink = OpenURLbase + '?sid=' + encodeURIComponent(strCitedIn) + '&genre=' + encodeURIComponent(strType) + '&issn=' + strISSN + '&ISBN=' + strISBN + '&volume=' + strVolume + '&issue=' + strVolume + '&date=' + encodeURIComponent(strDate) + '&spage=' + strPage + '&pages=' + strPage + '&title=' + encodeURIComponent(strJournal) + '&atitle=' + encodeURIComponent(strTitle) + '&aulast=' + encodeURIComponent(strAuthor) + '&id=doi%3A%2F%2F' + encodeURIComponent(DOI) + OpenURLsuffix;
 					$('#doiResponse').append('<h4>Check for full text</h4><p><a href="' + OpenURLLink + '"><img src="http://www.sjfc.edu/library/images/logo16.png" /> Get It @ Fisher</a></p><h4>Information About this DOI</h4><div id="doiCitationData">');
 					$('#doiResponse').append('Journal: ' + strJournal + '<br />');
 					$('#doiResponse').append('Title: ' + strTitle + '<br />');

@@ -1,19 +1,31 @@
 # Script to Get OpenURL elements from a DOI
 Author: Ben Hockenberry
 Project Initiated: 8/5/2016
+Last modified: 8/16/2016
 
 ## Contents: Files
  * README.md - You're looking at it
  * doitest.js - Javascript file to include in an ILLiad webpage
 	Adds a button which pops out a DOI search. If a DOI is found in the search string, it is checked against CrossRef, and if a target is identified by the DOI, its metadata is sent to the ILLiad request form.
- * doitest-nonilliad.js - Same thing, with "isILLiad" set to false, for use as an external DOI-to-OpenURL lookup
  * include_doisearch.html - file that can be saved into your ILLiad request directory and included in your ArticleRequest form with the line:
  ```
  <#INCLUDE filename="include_doisearch.html">
  ``` 
  * doitest.html - basic HTML page with the code to run a DOI lookup.  Modify this for wherever you want to host your lookup. Ours is in Libguides: http://libguides.sjfc.edu/doi
  * doitest.css - fairly basic CSS to style up doitest.html -- to be trimmed down further
+
  
+## Setup
+
+### Variables in JS file
+Set isILLiad to true or false depending on whether you will be using the code in ILLiad or not.
+
+You'll need to modify the JS file to set your OpenURL prefix and any suffix variables. The prefix is the section of an OpenURL request up to the "?".
+
+The suffix field exists for any special added fields (not in the OpenURL standard) specific to your resolver. For example, in EBSCO Full Text Finder, to allow for non-IP-authenticated access, you'll need to add in a site code and guest authentication identifiers as a suffix to the URL, like this:
+```
+"&site=ftf-live&authtype=guest&custid=s9000206&groupid=main"
+```
 
 ## Dependencies
 
