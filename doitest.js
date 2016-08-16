@@ -6,13 +6,12 @@
 var doiRegExp = new RegExp('(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![%"#? ])\\S)+)');
 
 /* Change this value if you are using this script in an ILLiad ArticleRequest Form or not -- set to true or false */
-var isILLiad = true;
+var isILLiad = false;
 
 /* OpenURLbase is the URL for your institution's OpenURL resolver, stopping just before the "?" before the OpenURL fields */
 var OpenURLbase = 'http://resolver.ebscohost.com/openurl';
 
 /* OpenURLsuffix is only required if your resolver requires institutional authentication in a GET variable (EBSCO), as opposed to having the code in the host name (like 360Link). 
-
 Change this value to '' if you're in the latter category. */
 var OpenURLsuffix = '&site=ftf-live&authtype=guest&custid=s9000206&groupid=main';
 
