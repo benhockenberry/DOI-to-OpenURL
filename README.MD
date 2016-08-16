@@ -8,10 +8,11 @@ Project Initiated: 8/5/2016
 	Adds a button which pops out a DOI search. If a DOI is found in the search string, it is checked against CrossRef, and if a target is identified by the DOI, its metadata is sent to the ILLiad request form.
  * doitest-nonilliad.js - Same thing, with "isILLiad" set to false, for use as an external DOI-to-OpenURL lookup
  * include_doisearch.html - file that can be saved into your ILLiad request directory and included in your ArticleRequest form with the line:
- ```html
+ ```
  <#INCLUDE filename="include_doisearch.html">
  ``` 
  * doitest.html - basic HTML page with the code to run a DOI lookup.  Modify this for wherever you want to host your lookup. Ours is in Libguides: http://libguides.sjfc.edu/doi
+ * doitest.css - fairly basic CSS to style up doitest.html -- to be trimmed down further
  
 
 ## Dependencies
@@ -19,11 +20,12 @@ Project Initiated: 8/5/2016
 ### OpenURL Only
  * jQuery
  * CrossRef API
- * Optional: Bootstrap CSS for button and input field highlighting
+ * Optional: Bootstrap for button and input field highlighting -- doitest.css now does this
  
 ### Our ILLiad Integration
- * jQuery UI - currently used for dialog popups inside ILLiad; you could take these out if preferring not to import the whole JQUI library
+ * jQuery UI - currently used for dialog popups inside ILLiad; you could take these out if preferring not to import the whole JQUI library, but will need to modify the user interface functions in the code
  * jQuery UI CSS customized to campus colors
+ * Our ILLiad integration also borrows heavily from Matthew Reidsma of GVSU's pages. You can get his code from the GVSULib Github at https://github.com/gvsulib/Illiad/
  
 ## Examples
  * Outside ILLiad: http://libguides.sjfc.edu/doi - OpenURL lookup via DOI
@@ -44,7 +46,8 @@ Project Initiated: 8/5/2016
  * On the ILLiad side, implement a more responsive version of the ".dialog" popup -- it works, currently, but something like FluidDialog would be better
  * Strip down Bootstrap CSS (which our ILLiad uses already) so others have access to the CSS for essential tags in the sample interface
  
-## Sample DOI response: http://api.crossref.org/works/10.1080/15367967.2016.1154466
+## Sample DOI response
+http://api.crossref.org/works/10.1080/15367967.2016.1154466
 ```json
 {
     "status":"ok",
