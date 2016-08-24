@@ -7,10 +7,7 @@ Last modified: 8/16/2016
  * README.md - You're looking at it
  * doitest.js - Javascript file to include in an ILLiad webpage
 	Adds a button which pops out a DOI search. If a DOI is found in the search string, it is checked against CrossRef, and if a target is identified by the DOI, its metadata is sent to the ILLiad request form.
- * include_doisearch.html - file that can be saved into your ILLiad request directory and included in your ArticleRequest form with the line:
- ```
- <#INCLUDE filename="include_doisearch.html">
- ``` 
+ * include_doisearch.html - file that can be saved into your ILLiad request directory and included in your ArticleRequest form with the line: `<#INCLUDE filename="include_doisearch.html">` 
  * doitest.html - basic HTML page with the code to run a DOI lookup.  Modify this for wherever you want to host your lookup. Ours is in Libguides: http://libguides.sjfc.edu/doi
  * doitest.css - fairly basic CSS to style up doitest.html -- to be trimmed down further
 
@@ -130,23 +127,3 @@ http://api.crossref.org/works/10.1080/15367967.2016.1154466
 }
 ```
 
-##MIT License
-Copyright (c) 2016 Benjamin Hockenberry
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
