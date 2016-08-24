@@ -21,7 +21,6 @@ var OpenURLbranding = 'Get It @ Fisher';
 /* == Define function for testing whether the input field contains a properly formatted DOI == */
 function DOItest(DOItoTest) {
 	/* DOI RegExp from https://github.com/regexhq/doi-regex/blob/master/index.js */
-	/* Remove alerts once it goes into production: convert these into meaningful HTML text */
 	if (doiRegExp.test(DOItoTest)) {
 		$('#doiResponse').html('<!-- Valid DOI -->');
 		return true;
@@ -162,17 +161,6 @@ $(document).ready(function() {
 							}
 							break;
 					}
-					//cited in field: "Library DOI Resolver"
-					//volume
-					//issue
-											//						page: 24-34
-					//ISSN[0]: 1536-7967,1536-7975
-					//DOI
-					//published-print.date-parts[0] PRIORITIZE over published-online.date-parts[0]
-					/*if (k=='type'){
-						str
-					}*/
-					
 				  });
 				});
 
@@ -189,6 +177,9 @@ $(document).ready(function() {
 					/* Since this isn't for ILLiad, Generate Output to the screen and create an OpenURL link */
 					var OpenURLLink = OpenURLbase + '?sid=' + encodeURIComponent(strCitedIn) + '&genre=' + encodeURIComponent(strType) + '&issn=' + strISSN + '&ISBN=' + strISBN + '&volume=' + strVolume + '&issue=' + strVolume + '&date=' + encodeURIComponent(strDate) + '&spage=' + strPage + '&pages=' + strPage + '&title=' + encodeURIComponent(strJournal) + '&atitle=' + encodeURIComponent(strTitle) + '&aulast=' + encodeURIComponent(strAuthor) + '&id=doi%3A%2F%2F' + encodeURIComponent(DOI) + OpenURLsuffix;
 					$('#doiResponse').append('<h4>Check for full text</h4><p><a href="' + OpenURLLink + '"><img src="http://www.sjfc.edu/library/images/logo16.png" /> Get It @ Fisher</a></p><h4>Information About this DOI</h4><div id="doiCitationData">');
+					/* TBD: Add a function to display a structured citation
+					$('#doiResponse').append('<div id="apacitation">Citation: '+ getCitation(strAuthor,) + '<br />');
+					*/
 					$('#doiResponse').append('Journal: ' + strJournal + '<br />');
 					$('#doiResponse').append('Title: ' + strTitle + '<br />');
 					$('#doiResponse').append('Author: ' + strAuthor + '<br />');
